@@ -1,0 +1,221 @@
+; dashboard window
+; ----------------
+(defwindow dashboard
+    :stacking "bg"
+    :windowtype "dock"
+    :wm-ignore false
+    :reserve (struts
+        :distance "0%"
+        :side "top"
+    )
+    :geometry (geometry
+        :x "0%"
+        :y "25%"
+        :height "0%"
+        :width "0%"
+        :anchor "top center"
+    )
+    (dashboard)
+)
+
+; main dashboard widget
+; ---------------------
+(defwidget dashboard []
+    (box
+        :class "dashboard"
+        :orientation "h"
+        :space-evenly false
+        :spacing 10
+        (section-left)
+        (section-center)
+        (section-right)
+    )
+)
+
+; left container - profile and power buttons
+; ------------------------------------------
+(defwidget section-left []
+    (box
+        :class "section-left"
+        :orientation "v"
+        :space-evenly false
+        :spacing 10
+        (profile)
+        (power-buttons-container)
+    )
+)
+
+(defwidget profile []
+    (box
+        :class "profile"
+        :orientation "v"
+        :height 400
+        :space-evenly false
+        (profile-picture)
+        (label
+            :text "birb Coffee"
+            :vexpand true
+            :valign "center"
+            :halign "center"
+        )
+    )
+)
+
+(defwidget profile-picture []
+    (box
+        :class "profile-picture"
+        :vexpand true
+        :valign "center"
+        :halign "center"
+        :height 200
+        :width 200
+    )
+)
+
+(defwidget power-buttons-container []
+    (box
+        :class "power-buttons-container"
+        :orientation "h"
+        :space-evenly false
+        :spacing 10
+        (power-buttons)
+        (logout-button-container)
+    )
+)
+
+(defwidget power-buttons []
+    (box
+        :class "power-buttons"
+        :orientation "v"
+        :height 200
+        :width 200
+        :space-evenly false
+        :spacing 10
+        (power-buttons-top)
+        (power-buttons-bottom)
+    )
+)
+
+(defwidget power-buttons-top []
+    (box
+        :class "power-buttons-top"
+        :orientation "h"
+        :height 100
+        :width 200
+        :space-evenly false
+        :spacing 10
+        (poweroff)
+        (restart)
+    )
+)
+
+(defwidget poweroff []
+    (box
+        :class "poweroff"
+        :height 100
+        :width 100
+        (image 
+            :path "./icons/shut-down-line.svg"
+            :image-height 60
+            :image-width 60
+        )
+    )
+)
+
+(defwidget restart []
+    (box
+        :class "restart"
+        :height 100
+        :width 100
+        (image 
+            :path "./icons/restart-line.svg"
+            :image-height 60
+            :image-width 60
+        )
+    )
+)
+
+(defwidget power-buttons-bottom []
+    (box
+        :class "power-buttons-bottom"
+        :height 100
+        :width 200
+        :space-evenly false
+        :spacing 10
+        (sleep)
+        (lock)
+    )
+)
+
+(defwidget sleep []
+    (box
+        :class "sleep"
+        :height 100
+        :width 100
+        (image 
+            :path "./icons/sleep-line.svg"
+            :image-height 60
+            :image-width 60
+        )
+    )
+)
+
+(defwidget lock []
+    (box
+        :class "lock"
+        :height 100
+        :width 100
+        (image 
+            :path "./icons/lock-line.svg"
+            :image-height 60
+            :image-width 60
+        )
+    )
+)
+
+(defwidget logout-button-container []
+    (box
+        :class "logout-button-container"
+        (logout-button)
+    )
+)
+
+(defwidget logout-button []
+    (box
+        :class "logout-button"
+        :valign "center"
+        :height 100
+        :width 100
+        (image 
+            :path "./icons/logout-line.svg"
+            :image-height 60
+            :image-width 60
+        )
+    )
+)
+
+; center container - ram, cpu, brightness, volume, weather
+; --------------------------------------------------------
+(defwidget section-center []
+    (box
+        :class "section-center"
+        :orientation "v"
+        :valign "start"
+        :halign "start"
+        :height 600
+        :width 300
+    )
+)
+
+; quick launch apps 
+; -----------------
+(defwidget section-right []
+    (box
+        :class "section-right"
+        :orientation "v"
+        :valign "start"
+        :halign "start"
+        :height 400
+        :width 400
+    )
+)

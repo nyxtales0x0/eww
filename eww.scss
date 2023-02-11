@@ -1,0 +1,65 @@
+* {
+    all: unset;
+}
+
+$bg-0: #1e1e2e;
+
+.dashboard {
+    // background-color: black;
+    padding: 10px;
+}
+
+.profile {
+    background-color: $bg-0;
+    border-radius: 30px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    color: #cdd6f4;
+    font-size: 24px;
+}
+
+.profile-picture {
+    background-image: url("/home/birb/Downloads/wallpaper03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 75% 0%;
+    border-radius: 50%;
+}
+
+.poweroff, .restart, .sleep, .lock {
+    background-color: $bg-0;
+    border-radius: 30px;
+}
+
+.poweroff {
+    border-bottom-right-radius: 0;
+}
+
+.restart {
+    border-bottom-left-radius: 0;
+}
+
+.sleep {
+    border-top-right-radius: 0;
+}
+
+.lock {
+    border-top-left-radius: 0;
+}
+
+.logout-button-container {
+    background-color: $bg-0;
+    border-radius: 30px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.section-center {
+    background-color: green;
+}
+
+.section-right {
+    background-color: red;
+}
