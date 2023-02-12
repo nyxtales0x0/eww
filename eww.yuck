@@ -1,5 +1,6 @@
 ; dashboard window
 ; ----------------
+
 (defwindow dashboard
     :stacking "bg"
     :windowtype "dock"
@@ -20,6 +21,7 @@
 
 ; main dashboard widget
 ; ---------------------
+
 (defwidget dashboard []
     (box
         :class "dashboard"
@@ -34,6 +36,7 @@
 
 ; left container - profile and power buttons
 ; ------------------------------------------
+
 (defwidget section-left []
     (box
         :class "section-left"
@@ -55,8 +58,6 @@
         (label
             :text "birb Coffee"
             :vexpand true
-            :valign "center"
-            :halign "center"
         )
     )
 )
@@ -75,7 +76,6 @@
 (defwidget power-buttons-container []
     (box
         :class "power-buttons-container"
-        :orientation "h"
         :space-evenly false
         :spacing 10
         (power-buttons)
@@ -87,9 +87,6 @@
     (box
         :class "power-buttons"
         :orientation "v"
-        :height 200
-        :width 200
-        :space-evenly false
         :spacing 10
         (power-buttons-top)
         (power-buttons-bottom)
@@ -99,10 +96,6 @@
 (defwidget power-buttons-top []
     (box
         :class "power-buttons-top"
-        :orientation "h"
-        :height 100
-        :width 200
-        :space-evenly false
         :spacing 10
         (poweroff)
         (restart)
@@ -138,9 +131,6 @@
 (defwidget power-buttons-bottom []
     (box
         :class "power-buttons-bottom"
-        :height 100
-        :width 200
-        :space-evenly false
         :spacing 10
         (sleep)
         (lock)
@@ -196,6 +186,7 @@
 
 ; center container - ram, cpu, brightness, volume, weather
 ; --------------------------------------------------------
+
 (defwidget section-center []
     (box
         :class "section-center"
@@ -209,6 +200,7 @@
 
 ; quick launch apps 
 ; -----------------
+
 (defwidget section-right []
     (box
         :class "section-right"
