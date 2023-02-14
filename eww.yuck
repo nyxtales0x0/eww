@@ -30,7 +30,7 @@
         :spacing 10
         (section-left)
         (section-center)
-        (section-right)
+        ; (section-right)
     )
 )
 
@@ -191,10 +191,47 @@
     (box
         :class "section-center"
         :orientation "v"
-        :valign "start"
-        :halign "start"
-        :height 600
-        :width 300
+        :space-evenly false
+        (ram-cpu-container)
+    )
+)
+
+(defwidget ram-cpu-container []
+    (box
+        :class "ram-cpu-container"
+        :spacing 10
+        (ram)
+        (cpu)
+    )
+)
+
+(defwidget ram []
+    (box
+        :class "ram"
+        :height 270
+        :width 270
+        (circular-progress
+            :class "ram-progress"
+            :value {EWW_RAM.used_mem_perc}
+            :start-at 25
+            :thickness 10
+            :clockwise false
+        )
+    )
+)
+
+(defwidget cpu []
+    (box
+        :class "cpu"
+        :height 270
+        :width 270
+        (circular-progress
+            :class "cpu-progress"
+            :value {EWW_CPU.avg}
+            :start-at 25
+            :thickness 10
+            :clockwise false
+        )
     )
 )
 

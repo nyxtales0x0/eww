@@ -56,8 +56,28 @@ $bg-0: #1e1e2e;
     border-bottom-right-radius: 0;
 }
 
-.section-center {
-    background-color: green;
+.ram {
+    background-color: $bg-0;
+    padding: 60px;
+    color: #f38ba8;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.ram-progress {
+    background-color: #313244;
+}
+
+.cpu {
+    background-color: $bg-0;
+    padding: 60px;
+    color: #f9e2af;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.cpu-progress {
+    background-color: #313244;
 }
 
 .section-right {
